@@ -1,14 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { MockComponent } from 'ng-mocks';
-import { SearchComponent } from './search/search.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        MockComponent(SearchComponent)
+        AppComponent
       ],
     }).compileComponents();
   }));
