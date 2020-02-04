@@ -37,7 +37,7 @@ describe('AppComponent', () => {
     expect(h1.nativeElement.innerText).toBe('Test Title');
   });
 
-  fit('should have a searcher', () => {
+  it('should have a searcher', () => {
     const searcher = fixture.debugElement.query(By.css('app-searcher'));
 
     expect(searcher.nativeElement).toBeDefined();
