@@ -1,5 +1,6 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -23,4 +24,13 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
+
+  it('should have a title', () => {
+    component.title = 'Test Title';
+    const h1 = fixture.debugElement.query(By.css('h1'));
+
+    fixture.detectChanges();
+    
+    expect(h1.nativeElement.innerText).toBe('Test Title');
+  })
 });
