@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelsService } from '../services/hotels/hotels.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-searcher',
@@ -7,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearcherComponent implements OnInit {
   inputSearch: string;
-  hotels: string[];
+  hotels$: Observable<string[]>;
 
-  constructor() { }
+  constructor(private hotelsService: HotelsService) { }
 
   ngOnInit() {
   }
 
   onSearch() {
-    this.hotels = ["hotel1", "hotel2", "hotel3"];
+    this.hotels$ = this.hotelsService.search(this.inputSearch);
   }
 }

@@ -2,4 +2,4 @@
 
 <button class="search-button" (click)="onSearch()">Search Vacation</button>
 
-<div class="hotel-result" *ngFor="let hotel of hotels">{{hotel}}</div>
+<div class="hotel-result" *ngFor="let hotel of hotels$ | async">{{hotel}}</div>
